@@ -1880,7 +1880,7 @@ config MSM_CPU_FREQ_SET_MIN_MAX
 config MSM_CPU_FREQ_MAX
 	int "Max CPU Frequency"
 	depends on MSM_CPU_FREQ_SET_MIN_MAX
-	default 384000
+	default 1190400
 
 config MSM_CPU_FREQ_MIN
 	int "Min CPU Frequency"
@@ -1908,6 +1908,12 @@ config CPU_OVERCLOCK
 	default n
 	help
 	  Simple CPU Overclocking Option to 1.6 GHz
+
+config USERSPACE_VOLTAGE_CONTROL
+	bool "Enable Userspace CPU Voltage Control"
+	default y
+	help
+	  Userspace Voltage Control
 
 config MSM_AVS_HW
 	bool "Enable Adaptive Voltage Scaling (AVS)"
@@ -3120,13 +3126,5 @@ config MMI_MSM_PINMUX
 	help
 	  Provides capability for reading an OF DT node to provide initial
 	  configuration of GPIO MUX settings on MSM chip families.
-
-config LCD_KCAL
-	depends on ARCH_MSM
-	default y
-	bool "LG's LCD calibration code"
-	help
-	  Provides LCD calibration capability
-
 
 endif
